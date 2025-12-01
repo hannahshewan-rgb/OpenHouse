@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRC London | Carols & Open House - Sunday 7th December</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --black: #0A0A0A;
+            --dark-grey: #1A1A1A;
+            --muted-teal: #8FA5A3;
+            --sage-green: #A8BDB9;
+            --off-white: #F5F5F5;
+            --pure-white: #FFFFFF;
+            --accent-blue: #6B8E99;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--off-white);
+            overflow-x: hidden;
+        }
+        
+        /* Subtle texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.4;
+        }
+        
+        /* Header Section */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--black);
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--off-white);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            font-weight: 400;
+            color: var(--pure-white);
+            line-height: 1;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+            text-transform: uppercase;
+        }
+        
+        .event-banner {
+            display: inline-block;
+            background: var(--muted-teal);
+            color: var(--black);
+            padding: 1.2rem 4rem;
+            border-radius: 50px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .event-banner-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .event-description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--off-white);
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 1.2s both;
+            letter-spacing: 0.3px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.1rem 3rem;
+            background: transparent;
+            color: var(--pure-white);
+            border: 2px solid var(--muted-teal);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            animation: fadeInUp 1s ease-out 1.5s both;
+        }
+        
+        .cta-button:hover {
+            background: var(--muted-teal);
+            color: var(--black);
+            transform: translateY(-2px);
+        }
+        
+        /* Video Section */
+        .video-section {
+            position: relative;
+            padding: 8rem 2rem;
+            background: var(--dark-grey);
+            z-index: 2;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 5rem;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 400;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--sage-green);
+            font-weight: 400;
+            line-height: 1.7;
+            letter-spacing: 0.3px;
+        }
+        
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .video-container {
+            position: relative;
+            background: var(--black);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(143, 165, 163, 0.2);
+            width: 100%;
+            max-width: 700px;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-8px);
+            border-color: var(--muted-teal);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: var(--black);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .video-placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+        
+        .video-placeholder h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--pure-white);
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        .video-placeholder p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-info {
+            padding: 1.8rem;
+            background: var(--black);
+        }
+        
+        .video-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--pure-white);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .video-description {
+            font-size: 0.9rem;
+            color: var(--sage-green);
+            line-height: 1.6;
+        }
+        
+        .instruction-box {
+            max-width: 900px;
+            margin: 5rem auto 0;
+            padding: 2.5rem;
+            background: rgba(143, 165, 163, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--muted-teal);
+        }
+        
+        .instruction-box h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .instruction-box p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--sage-green);
+            margin-bottom: 1rem;
+        }
+        
+        .instruction-box code {
+            display: block;
+            background: var(--black);
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--muted-teal);
+            margin-top: 1rem;
+            overflow-x: auto;
+            border: 1px solid rgba(143, 165, 163, 0.3);
+        }
+        
+        /* Reason for the Season Section */
+        .reason-section {
+            position: relative;
+            padding: 6rem 2rem;
+            background: var(--dark-grey);
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .reason-section .section-title {
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+        }
+        
+        .reason-section .section-subtitle {
+            color: var(--sage-green);
+        }
+        
+        /* Locations List */
+        .locations-list {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .location-item {
+            background: var(--dark-grey);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--muted-teal);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .location-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--sage-green);
+        }
+        
+        .location-item .location-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--muted-teal);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-item .location-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--pure-white);
+            margin-bottom: 0.8rem;
+        }
+        
+        .location-item .location-address {
+            font-size: 1rem;
+            color: var(--sage-green);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Locations Section */
+        .locations-section {
+            position: relative;
+            padding: 8rem 2rem;
+            background: var(--black);
+            z-index: 2;
+        }
+        
+        .locations-section .section-title {
+            color: var(--pure-white);
+        }
+        
+        .locations-section .section-subtitle {
+            color: var(--sage-green);
+        }
+        
+        .location-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--muted-teal);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--muted-teal);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+        }
+        
+        .location-link:hover {
+            gap: 0.8rem;
+            background: var(--muted-teal);
+            color: var(--black);
+        }
+        
+        .location-link::after {
+            content: '→';
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--off-white);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(143, 165, 163, 0.2);
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            color: var(--pure-white);
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--sage-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: var(--muted-teal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: opacity 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-link:hover {
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                letter-spacing: 1px;
+            }
+            
+            .event-banner {
+                padding: 1rem 2.5rem;
+            }
+            
+            .video-section,
+            .locations-section {
+                padding: 5rem 1.5rem;
+            }
+            
+            .carousel-slide {
+                padding: 1rem;
+            }
+        }
+        
+        /* Subtle light particles */
+        @keyframes float-particle {
+            0%, 100% { 
+                transform: translate(0, 0);
+                opacity: 0.1;
+            }
+            50% { 
+                transform: translate(20px, -20px);
+                opacity: 0.3;
+            }
+        }
+        
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--muted-teal);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            animation: float-particle 15s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">CRC London Presents</div>
+            <h1>Carols & Open House</h1>
+            
+            <div class="event-banner">
+                <span class="event-banner-text">Sunday 7th December | 10:30am & 4:30pm</span>
+            </div>
+            
+            <p class="event-description">
+                Join us for a Christmas Open House, complete with a carol service, festive refreshments and a church community ready to welcome you. Parents with babies are warmly invited, and full kids' facilities will be available. Come and celebrate the reason for the season: Jesus!
+            </p>
+            
+            <a href="#locations" class="cta-button">Find Your Closest Location</a>
+        </div>
+    </header>
+    
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="section-header">
+            <h2 class="section-title">Experience the Reason for the Season</h2>
+        </div>
+        <div class="video-grid">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Vog7V1HuTQ8" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Locations Section -->
+    <section class="locations-section" id="locations">
+        <div class="section-header">
+            <h2 class="section-title">Venue Locations</h2>
+            <p class="section-subtitle">Find your closest location</p>
+        </div>
+        
+        <div class="locations-list">
+            <div class="location-item">
+                <div class="location-time">10:30 AM & 4:30 PM</div>
+                <h3 class="location-name">Bromley-by-Bow (ELAM)</h3>
+                <p class="location-address">
+                    45a Maltings Close, London, E3 3TA
+                </p>
+                <a href="https://maps.google.com/?q=45a+Maltings+Close+London+E3+3TA" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM & 4:30 PM</div>
+                <h3 class="location-name">Sawbridgeworth</h3>
+                <p class="location-address">
+                    Cambridge Rd, Sawbridgeworth, CM21 9BY
+                </p>
+                <a href="https://maps.google.com/?q=Cambridge+Rd+Sawbridgeworth+CM21+9BY" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM & 4:30 PM</div>
+                <h3 class="location-name">Southfields</h3>
+                <p class="location-address">
+                    333 Merton Rd, London, SW18 5JU
+                </p>
+                <a href="https://maps.google.com/?q=333+Merton+Rd+London+SW18+5JU" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM & 4:30 PM</div>
+                <h3 class="location-name">East Barnet</h3>
+                <p class="location-address">
+                    5 Chestnut Grove, London, Barnet, EN4 8PU
+                </p>
+                <a href="https://maps.google.com/?q=5+Chestnut+Grove+London+Barnet+EN4+8PU" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM & 4:30 PM</div>
+                <h3 class="location-name">Sevenoaks</h3>
+                <p class="location-address">
+                    Seal Hollow Rd, Sevenoaks, TN13 3SL
+                </p>
+                <a href="https://maps.google.com/?q=Seal+Hollow+Rd+Sevenoaks+TN13+3SL" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM</div>
+                <h3 class="location-name">Ashford</h3>
+                <p class="location-address">
+                    Jasmin Vardimon Company, Creative Enterprise Quarter, Javelin Way, TN24 8FN
+                </p>
+                <a href="https://maps.google.com/?q=Jasmin+Vardimon+Company+Javelin+Way+Ashford+TN24+8FN" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM</div>
+                <h3 class="location-name">Reading</h3>
+                <p class="location-address">
+                    River Academy, 7 Richfield Avenue, Reading, RG1 8EQ
+                </p>
+                <a href="https://maps.google.com/?q=River+Academy+7+Richfield+Avenue+Reading+RG1+8EQ" target="_blank" class="location-link">Get Directions</a>
+            </div>
+            
+            <div class="location-item">
+                <div class="location-time">10:30 AM</div>
+                <h3 class="location-name">Durham</h3>
+                <p class="location-address">
+                    United Reformed Church, Church Bank, Stanley, DH9 0DU
+                </p>
+                <a href="https://maps.google.com/?q=United+Reformed+Church+Church+Bank+Stanley+DH9+0DU" target="_blank" class="location-link">Get Directions</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">CRC London</div>
+            <p class="footer-text">
+                Building One Church Many Locations<br>
+                Sunday Services: 11:00am • 5:00pm
+            </p>
+            <div class="footer-links">
+                <a href="https://www.crclondon.com/" target="_blank" class="footer-link">Website</a>
+                <a href="https://www.instagram.com/crc_london/" target="_blank" class="footer-link">Instagram</a>
+                <a href="/cdn-cgi/l/email-protection#5b32353d341b3829383734353f343575383436" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Particles script -->
+    <script>
+        // Wait for page to fully load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create ambient particles
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                document.body.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
